@@ -1,0 +1,27 @@
+@import "../abstract/variables.module";
+
+// placholder classes
+
+// mixins
+@mixin flex(
+  $direction: row,
+  $justifyContent: center,
+  $alignItems: center,
+  $gap: 1rem
+) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justifyContent;
+  align-items: $alignItems;
+  gap: $gap;
+}
+
+@mixin size($w: auto, $h: auto) {
+  width: $w;
+  min-height: $h;
+  max-height: fit-content;
+}
+// this border is meant for testing
+@mixin test-border($color: red) {
+  border: 1px solid $color;
+}
