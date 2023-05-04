@@ -21,6 +21,7 @@
     font-size: 14px;
     font-weight: 400;
     margin-bottom: 20px;
+    color: $iconsColorLarge;
   }
   // should use SASS :active psuedo class for this instead of repeating the code.
   .active {
@@ -56,18 +57,52 @@
   }
 }
 
-// nav Tablet view styling
+// nav Tablet view styling styling on small screen which is default
 .large_nav {
   display: none;
 }
 
 // tablet
 @media screen and (min-width: $tablet) {
+  .main_nav_tab_full {
+    position: relative;
+    min-height: 100vh;
+    max-height: 100vh;
+    width: 260px;
+  }
+
+  .main_nav_tab_partial {
+    position: relative;
+    min-height: 100vh;
+    max-height: 100vh;
+    width: 100px;
+  }
+
   .large_nav {
     position: fixed;
     min-width: fit-content;
-    @include flex($direction: column, $alignItems: flex-start, $gap: 10px);
+    min-height: 100vh;
     padding: 2rem;
+    @include flex(
+      $direction: column,
+      $alignItems: flex-start,
+      $justifyContent: flex-start,
+      $gap: 10px
+    );
+
+    .toggleGroup {
+      @include flex();
+    }
+
+    .toggle {
+      cursor: pointer;
+      color: $iconsColorLarge;
+    }
+
+    .logo {
+      display: none;
+      height: 30px;
+    }
 
     .menu_group {
       margin-bottom: 12px;
@@ -82,10 +117,8 @@
   }
 }
 
-.main_nav {
-  position: relative;
-  min-height: 100vh;
-  max-height: 100vh;
-  width: fit-content;
-  border: 1px solid red;
+@media screen and (min-width: $laptop) {
+  .logo {
+    display: block;
+  }
 }

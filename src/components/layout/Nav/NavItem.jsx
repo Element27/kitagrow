@@ -1,7 +1,7 @@
 
 import navM from "./nav.module.scss"
 
-const NavItem = ({ icon, title, isActive }) => {
+const NavItem = ({ icon, title, isActive, fullNav }) => {
   return (
     // this div should be  link. it is meant to handle routing
     // <div className={navM.navitem} >
@@ -9,7 +9,7 @@ const NavItem = ({ icon, title, isActive }) => {
       <div>
         {icon}
       </div>
-      < p > {title}</p >
+      {fullNav && < p > {title}</p >}
     </div >
   )
 }

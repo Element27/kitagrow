@@ -1,8 +1,12 @@
-import { SummaryIcon, ReportIcon, LinkbankIcon, DashboardIconLarge, ProductListIconLarge, EmailIconLarge, CategoryIcon } from "../../icons/icons"
+// import { useState } from 'react';
+import { SummaryIcon, ReportIcon, LinkbankIcon, DashboardIconLarge, ProductListIconLarge, EmailIconLarge, CategoryIcon, ShowMenu, HideMenu } from "../../icons/icons"
 import NavItem from "./NavItem"
 import navM from "./nav.module.scss"
+import logo from '/logo.png'
 
-const LargerScreenNav = () => {
+const LargerScreenNav = ({ fullNav, setfullNav }) => {
+
+
   const salesAnalytics = [
     {
       title: "Dashboard",
@@ -58,22 +62,28 @@ const LargerScreenNav = () => {
 
   return (
     <div className={navM.large_nav}>
+      <div className={navM.toggleGroup}>
+        <p className={navM.toggle}
+          onClick={() => setfullNav(!fullNav)}>{fullNav ? <HideMenu /> : <ShowMenu />}</p>
+        {fullNav && <img src={logo} className={navM.logo} />}
+      </div>
+
       <div className={navM.menu_group}>
-        <h4>Sales Analytics</h4>
+        <h4>{fullNav ? "Sales Analytics" : "Sales"}</h4>
         {salesAnalytics.map((item, index) => {
-          return <NavItem key={index} title={item.title} icon={item.icon} isActive={item.isActive} />
+          return <NavItem key={index} title={item.title} icon={item.icon} isActive={item.isActive} fullNav={fullNav} />
         })}
       </div>
       <div className={navM.menu_group}>
-        <h4>Product Management Services</h4>
+        <h4>{fullNav ? "Product Management Services" : "Prod..."}</h4>
         {productMgt.map((item, index) => {
-          return <NavItem key={index} title={item.title} icon={item.icon} isActive={item.isActive} />
+          return <NavItem key={index} title={item.title} icon={item.icon} isActive={item.isActive} fullNav={fullNav} />
         })}
       </div>
       <div className={navM.menu_group}>
-        <h4>Email Messaging</h4>
+        <h4>{fullNav ? "Email Messaging" : "Email"}</h4>
         {emailMsg.map((item, index) => {
-          return <NavItem key={index} title={item.title} icon={item.icon} isActive={item.isActive} />
+          return <NavItem key={index} title={item.title} icon={item.icon} isActive={item.isActive} fullNav={fullNav} />
         })}
       </div>
     </div>

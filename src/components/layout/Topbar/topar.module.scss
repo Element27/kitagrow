@@ -1,0 +1,107 @@
+@import "../../../styles/components/reuseable.module";
+@import "../../../styles/abstract/variables.module";
+
+$powderBlue: #eef4ff;
+// top bar for small screen
+.s_container {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50px;
+  padding: 0 24px;
+  @include flex($justifyContent: space-between);
+  box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.03);
+  border-radius: 0 0 20px 20px;
+
+  .page_title {
+    @include flex($gap: 10px);
+
+    p {
+      font-size: 18px;
+    }
+
+    span {
+      color: $iconsColorLarge;
+      cursor: pointer;
+    }
+  }
+
+  .page_icons {
+    @include flex($gap: 27px);
+    color: $iconsColorLarge;
+  }
+}
+
+// set it to remove on large screen
+@media screen and (min-width: $tablet) {
+  .s_container {
+    display: none;
+  }
+}
+
+// on small screen should not be visible
+.l_contianer {
+  display: none;
+}
+
+@media screen and (min-width: $tablet) {
+  .l_contianer {
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding-top: 16px;
+    @include flex($justifyContent: space-between);
+
+    .searchbox {
+      @include flex($justifyContent: space-between);
+      height: 38px;
+      max-width: 300px;
+      border: 1px solid red;
+      padding: 10px 12px;
+      border-radius: 8px;
+      border: 1px solid #d0d5dd;
+      color: $iconsColorLarge;
+
+      input {
+        outline: none;
+        border: none;
+        font-size: 14px;
+        background-color: transparent;
+      }
+
+      .search {
+        width: 14px;
+        height: 14px;
+      }
+    }
+
+    .profile {
+      @include flex($justifyContent: space-between);
+      span {
+        color: $iconsColorLarge;
+      }
+
+      div {
+        @include flex($justifyContent: space-between, $gap: 0.5rem);
+        border-left: 1px solid $powderBlue;
+        padding: 0 1rem;
+        .avatar {
+          width: 32px;
+          height: 32px;
+          background-color: $powderBlue;
+          color: #2d31a6;
+          font-size: 14px;
+          text-transform: uppercase;
+          @include flex();
+          border-radius: 100%;
+        }
+
+        p {
+          font-size: 16px;
+        }
+      }
+    }
+  }
+}
