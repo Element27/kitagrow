@@ -4,6 +4,7 @@
 $powderBlue: #eef4ff;
 
 .container {
+  margin-bottom: 1rem;
   .slug {
     display: none;
   }
@@ -113,6 +114,9 @@ $powderBlue: #eef4ff;
   .container {
     // padding: 32px;
     .top {
+      .addnewbtn {
+        font-size: 14px;
+      }
       .top_large {
         .searchbox {
           width: 400px;
@@ -122,6 +126,119 @@ $powderBlue: #eef4ff;
       .icon {
         display: none;
       }
+    }
+  }
+}
+
+table {
+  width: 100%;
+  // padding-bottom: 2rem;
+
+  thead {
+    color: #8d98af;
+    font-size: 14px;
+    text-align: left;
+    background-color: #fbfbfd;
+
+    tr {
+      th {
+        padding: 8px;
+      }
+      .checkbox {
+        display: none;
+      }
+      .prodDetail {
+      }
+      .stock {
+        display: none;
+      }
+      .price {
+        display: none;
+      }
+      .graph {
+        display: none;
+      }
+      .icon {
+      }
+    }
+  }
+}
+
+@media screen and (min-width: $tablet) {
+  table {
+    thead {
+      tr {
+        .stock {
+          display: table-cell;
+        }
+        .price {
+          display: table-cell;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: $laptop) {
+  table {
+    thead {
+      tr {
+        .checkbox {
+          display: table-cell;
+        }
+        .graph {
+          display: table-cell;
+        }
+        .icon {
+          display: table-cell;
+        }
+      }
+    }
+  }
+}
+
+.bottom_nav {
+  @include flex();
+  color: #667085;
+  margin: 1rem auto;
+
+  .page_count {
+    display: none;
+  }
+}
+.table_nav {
+  @include flex($justifyContent: space-between);
+  .table_nav_count {
+    @include flex();
+    width: 60px;
+    border: 1px solid #d0d5dd;
+    padding: 10px 12px;
+    border-radius: 8px;
+  }
+
+  .table_nav_prev,
+  .table_nav_next {
+    @include flex();
+    font-size: 12px;
+    width: 38px;
+    padding: 8px;
+    border: 1px solid #d0d5dd;
+    border-radius: 8px;
+  }
+}
+
+@media screen and (min-width: $laptop) {
+  .bottom_nav {
+    @include flex($justifyContent: space-between);
+    .page_count {
+      @include flex($justifyContent: space-between);
+      height: 38px;
+      width: 300px;
+      border: 1px solid red;
+      padding: 10px 12px;
+      border-radius: 8px;
+      border: 1px solid #d0d5dd;
+      color: $iconsColorLarge;
     }
   }
 }
