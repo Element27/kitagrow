@@ -1,6 +1,7 @@
 @import "../../../styles/components/reuseable.module";
 @import "../../../styles/abstract/variables.module";
 
+$powderBlue: #eef4ff;
 // navitem styling
 .navitem {
   @include flex($direction: column, $gap: 0);
@@ -118,7 +119,9 @@
 }
 
 @media screen and (min-width: $laptop) {
-  .logo {
-    display: block;
+  .large_nav {
+    .logo {
+      display: block;
+    }
   }
 }

@@ -1,0 +1,127 @@
+@import "../../styles/abstract/variables.module";
+@import "../../styles/components/reuseable.module";
+
+$powderBlue: #eef4ff;
+
+.container {
+  .slug {
+    display: none;
+  }
+
+  .top {
+    @include flex($justifyContent: space-between, $gap: 16px);
+    width: 100%;
+
+    .addnewbtn {
+      height: 38px;
+      background-color: $blue;
+      border-radius: 8px;
+      width: 270px;
+      color: white;
+    }
+
+    .icon {
+      border: 1px solid #8d98af;
+      border-radius: 8px;
+      color: #8d98af;
+      width: 40px;
+      height: 38px;
+      @include flex();
+    }
+
+    .top_large {
+      display: none;
+    }
+  }
+}
+
+@media screen and (min-width: $tablet) {
+  .container {
+    // padding: 32px;
+    .slug {
+      display: block;
+      margin-bottom: 32px;
+      h3 {
+        font-size: 32px;
+        font-weight: 700;
+        margin-bottom: 8px;
+      }
+      p {
+        font-size: 16px;
+        color: #667085;
+      }
+    }
+    .top {
+      background-color: #fbfbfd;
+      padding: 16px;
+      border-radius: 8px;
+      // flex-direction: column;
+      .addnewbtn {
+        width: 200px;
+        font-size: 8px;
+      }
+      .top_large {
+        width: 100%;
+        @include flex($justifyContent: space-between);
+
+        .searchbox {
+          @include flex($justifyContent: space-between);
+          height: 38px;
+          width: 300px;
+          border: 1px solid red;
+          padding: 10px 12px;
+          border-radius: 8px;
+          border: 1px solid #d0d5dd;
+          color: $iconsColorLarge;
+
+          input {
+            outline: none;
+            border: none;
+            font-size: 14px;
+            background-color: transparent;
+          }
+
+          .search {
+            width: 14px;
+            height: 14px;
+          }
+        }
+
+        .filter {
+          height: 38px;
+          width: 200px;
+          border: 1px solid red;
+          padding: 10px 12px;
+          border-radius: 8px;
+          border: 1px solid #d0d5dd;
+          color: $iconsColorLarge;
+          font-size: 14px;
+          @include flex($justifyContent: space-between);
+          span {
+            color: $iconsColorLarge;
+          }
+        }
+      }
+
+      .icon {
+        display: none;
+      }
+    }
+  }
+}
+@media screen and (min-width: $laptop) {
+  .container {
+    // padding: 32px;
+    .top {
+      .top_large {
+        .searchbox {
+          width: 400px;
+        }
+      }
+
+      .icon {
+        display: none;
+      }
+    }
+  }
+}

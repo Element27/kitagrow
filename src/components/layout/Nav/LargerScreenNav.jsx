@@ -2,7 +2,7 @@
 import { SummaryIcon, ReportIcon, LinkbankIcon, DashboardIconLarge, ProductListIconLarge, EmailIconLarge, CategoryIcon, ShowMenu, HideMenu } from "../../icons/icons"
 import NavItem from "./NavItem"
 import navM from "./nav.module.scss"
-import logo from '/logo.png'
+import logo from '../../../assets/logo.png'
 
 const LargerScreenNav = ({ fullNav, setfullNav }) => {
 

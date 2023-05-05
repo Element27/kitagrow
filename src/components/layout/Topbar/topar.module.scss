@@ -13,7 +13,7 @@ $powderBlue: #eef4ff;
   @include flex($justifyContent: space-between);
   box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.03);
   border-radius: 0 0 20px 20px;
-
+  background-color: #fff;
   .page_title {
     @include flex($gap: 10px);
 
@@ -47,11 +47,13 @@ $powderBlue: #eef4ff;
 
 @media screen and (min-width: $tablet) {
   .l_contianer {
+    background-color: #fbfbfd;
     position: sticky;
     top: 0;
     left: 0;
     width: 100%;
-    padding-top: 16px;
+    height: fit-content;
+    padding: 16px 0;
     @include flex($justifyContent: space-between);
 
     .searchbox {
