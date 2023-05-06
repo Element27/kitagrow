@@ -1,0 +1,49 @@
+@import "../../styles/components/reuseable.module";
+
+.container {
+  @include flex($alignItems: flex-start, $justifyContent: unset);
+  position: relative;
+  width: 100%;
+
+  .content {
+    // flex: 1;
+    width: 100%;
+    // border: 1px solid blue;
+
+    .section {
+      display: block;
+      min-height: 200vh;
+    }
+  }
+
+  .nav {
+    position: relative;
+    top: 10%;
+    width: 260px;
+    // border: 1px solid red;
+    min-height: 300vh;
+    .inner {
+      position: fixed;
+    }
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .container {
+    .content {
+      .section {
+      }
+    }
+
+    .nav {
+      position: relative;
+      width: 260px;
+      // border: 1px solid red;
+      // height: 100vh;
+      .inner {
+        position: sticky;
+        top: 10%;
+      }
+    }
+  }
+}

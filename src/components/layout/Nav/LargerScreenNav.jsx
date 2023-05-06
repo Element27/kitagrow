@@ -1,5 +1,5 @@
 // import { useState } from 'react';
-import { SummaryIcon, ReportIcon, LinkbankIcon, DashboardIconLarge, ProductListIconLarge, EmailIconLarge, CategoryIcon, ShowMenu, HideMenu } from "../../icons/icons"
+import { SummaryIcon, ReportIcon, LinkbankIcon, DashboardIconLarge, ProductListIconLarge, EmailIconLarge, CategoryIcon, ShowMenu, HideMenu, DiamondIcon } from "../../icons/icons"
 import NavItem from "./NavItem"
 import navM from "./nav.module.scss"
 import logo from '../../../assets/logo.png'
@@ -86,6 +86,14 @@ const LargerScreenNav = ({ fullNav, setfullNav }) => {
           return <NavItem key={index} title={item.title} icon={item.icon} isActive={item.isActive} fullNav={fullNav} />
         })}
       </div>
+      {fullNav &&
+        <div className={navM.features}>
+          <span className={navM.features_icon}><DiamondIcon /></span>
+          <p>See Version 2.10 Feature
+          </p>
+          <div>2</div>
+        </div>
+      }
     </div>
   )
 }

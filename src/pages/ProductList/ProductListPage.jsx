@@ -1,10 +1,13 @@
+import { Link } from 'react-router-dom'
 import { products } from '../../../productData'
 import { CaretIconLarge, CaretRightIcon, FilterIcon, SearchIconLarge, CaretLeftIcon, CaretdownIcon } from '../../components/icons/icons'
+// import Sidebar from '../../components/layout/Sidebar'
 import ProductListTr from '../../components/productlistComp/ProductListTr'
 import plpM from './productlistpage.module.scss'
 
 const ProductListPage = () => {
   return (
+    // <Sidebar>
     <>
       <div className={plpM.container}>
         <div className={plpM.slug}>
@@ -13,8 +16,10 @@ const ProductListPage = () => {
         </div>
         <div className={plpM.top}>
 
+          <Link to='/addproduct'>
+            <button className={plpM.addnewbtn}>+ Add New Product</button>
+          </Link>
 
-          <button className={plpM.addnewbtn}>+ Add New Product</button>
 
           <div className={plpM.icon}>
             <FilterIcon />
@@ -81,6 +86,7 @@ const ProductListPage = () => {
         </div>
       </div>
     </>
+    // </Sidebar>
   )
 }
 

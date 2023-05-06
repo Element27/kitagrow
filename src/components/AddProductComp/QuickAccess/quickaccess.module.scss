@@ -1,0 +1,54 @@
+@import "../../../styles/components/reuseable.module";
+
+.quickaccess {
+  @include flex($gap: 16px, $justifyContent: flex-start);
+  // position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow-x: auto;
+  // background-color: #fff;
+  border-radius: 0 0 20px 20px;
+  padding: 14px 32px;
+  a {
+    text-decoration: none;
+    color: #8d98af;
+    font-size: 14px;
+
+    span {
+      display: none;
+    }
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .quickaccess {
+    @include flex(
+      $gap: 16px,
+      $justifyContent: flex-start,
+      $alignItems: flex-start,
+      $direction: column
+    );
+    position: unset;
+    top: 0;
+    right: 0;
+    left: unset;
+    border-radius: 8px;
+    padding: 14px 32px;
+    border: 1px solid #8d98af;
+    h3 {
+      display: block;
+      font-weight: 700;
+      font-size: 14px;
+    }
+    a {
+      text-decoration: none;
+      color: #8d98af;
+      font-size: 14px;
+
+      span {
+        display: inline;
+      }
+    }
+  }
+}

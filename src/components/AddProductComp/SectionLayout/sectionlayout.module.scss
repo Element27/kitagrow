@@ -1,0 +1,32 @@
+@import "../../../styles/components/reuseable.module";
+
+.main {
+  border-bottom: 1px solid #efeff4;
+  border-radius: 8px;
+  padding: 24px;
+  margin: 0 0 16px 0;
+
+  .title {
+    @include flex($justifyContent: space-between, $gap: 8rem);
+    border-bottom: 1px solid #efeff4;
+    padding-bottom: 16px;
+    margin-bottom: 24px;
+    h3 {
+      display: block;
+      font-size: 20px;
+      color: #000;
+      font-weight: 700;
+    }
+    span {
+      color: #667085;
+    }
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .main {
+    border: 1px solid #efeff4;
+    border-radius: 8px;
+    padding: 24px;
+  }
+}

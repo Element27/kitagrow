@@ -1,0 +1,61 @@
+@import "../../../styles/components/reuseable.module";
+// @import '../../../styles/components/reuseable.module'
+
+.container {
+  @include flex($justifyContent: space-between);
+
+  .title {
+    @include flex($justifyContent: flex-start);
+    .arrow {
+      display: none;
+    }
+
+    p {
+      font-size: 18px;
+    }
+  }
+
+  .btns {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .container {
+    padding: 32px 0;
+    .title {
+      .caret {
+        display: none;
+      }
+
+      .arrow {
+        display: block;
+        // font-size: 48px;
+      }
+
+      p {
+        font-size: 32px;
+        font-weight: 700;
+      }
+    }
+
+    .btns {
+      @include flex();
+
+      .draft,
+      .publish {
+        height: 48px;
+        padding: 8px 24px;
+        border-radius: 8px;
+        color: #9ea9c1;
+      }
+
+      .draft {
+        border: 1px solid #f0f3f7;
+      }
+      .publish {
+        background-color: #f0f3f7;
+      }
+    }
+  }
+}

@@ -1,0 +1,236 @@
+@import "../../../styles/components/reuseable.module";
+@mixin label {
+  label {
+    @include flex($justifyContent: space-between, $gap: 8px);
+    width: 100%;
+    font-size: 14px;
+    margin-bottom: 6px;
+    .grey {
+      color: #8d98af;
+    }
+    .blue {
+      color: #443df6;
+    }
+  }
+}
+.button {
+  border: 1px solid #443df6;
+  color: #443df6;
+  width: 100%;
+  padding: 8px;
+  margin-top: 16px;
+  border-radius: 8px;
+  // height:;
+}
+
+.border_b {
+  border-bottom: 1px solid #efeff4;
+}
+.form_item {
+  @include flex($direction: column, $gap: 8px);
+  @include label();
+  margin-bottom: 24px;
+
+  .grey_input {
+    background-color: #d0d5dd;
+    color: #9ea9c1;
+    border: 1px solid #d0d5dd;
+  }
+
+  input,
+  select,
+  textarea {
+    width: 100%;
+    border: 1px solid #d0d5dd;
+    font-weight: 14px;
+    padding: 12px;
+    outline: none;
+    border-radius: 8px;
+    color: #667085;
+  }
+  textarea {
+    height: 176px;
+    resize: none;
+  }
+}
+
+.form_group {
+  @include flex($direction: column, $gap: 8px);
+  .form_group_item {
+    width: 100%;
+    margin-bottom: 24px;
+
+    @include label();
+    .grey_input {
+      background-color: #d0d5dd;
+      color: #9ea9c1;
+      border: 1px solid #d0d5dd;
+    }
+
+    input,
+    select {
+      width: 100%;
+      border: 1px solid #d0d5dd;
+      font-weight: 14px;
+      padding: 12px;
+      outline: none;
+      border-radius: 8px;
+      color: #667085;
+      ::placeholder {
+      }
+    }
+    .prod_weight {
+      display: flex;
+      border: 1px solid #d0d5dd;
+      input,
+      select {
+        border: none;
+      }
+      select {
+        width: 30%;
+      }
+      input {
+        width: 80%;
+      }
+    }
+
+    .form_flow {
+      @include flex($justifyContent: space-between);
+
+      .form_flow_input {
+        @include flex($justifyContent: space-between, $gap: 0);
+        border: 1px solid #d0d5dd;
+        border-radius: 8px;
+        width: 100%;
+        padding: 0 8px;
+        input {
+          border: none;
+          width: 80%;
+        }
+        p {
+          color: #667085;
+          font-size: 14px;
+        }
+      }
+    }
+  }
+}
+
+.form_radio_group {
+  .label {
+    @include label();
+    margin-bottom: 16px;
+  }
+  .radio_group {
+    @include flex($justifyContent: flex-start);
+    label {
+      @include label();
+      font-size: 14px;
+      @include flex($justifyContent: flex-start, $gap: 0.5rem);
+    }
+  }
+}
+.border_top {
+  border-top: 1px solid #d0d5dd;
+  margin: 16px auto;
+}
+
+.media {
+  .media_icon {
+    @include flex($justifyContent: space-between);
+    overflow-x: auto;
+
+    label {
+      @include flex(
+        $gap: 14px,
+        $justifyContent: center,
+        $alignItems: center,
+        $direction: column
+      );
+      padding: 1rem;
+      min-width: 175px;
+      // width: 175px;
+      height: 175px;
+      text-align: center;
+      font-size: 14px;
+      background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='8' ry='8' stroke='%23D0D5DDFF' stroke-width='4' stroke-dasharray='6%2c 14' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e");
+      border-radius: 8px;
+      color: #d0d5dd;
+      .disappear {
+        display: none;
+      }
+    }
+  }
+
+  button {
+    border: 1px solid #443df6;
+    color: #443df6;
+    width: 100%;
+    padding: 8px;
+    margin-top: 16px;
+    border-radius: 8px;
+    // height:;
+  }
+
+  .video_media {
+    @include flex($justifyContent: space-evenly);
+    label {
+      @include flex(
+        $gap: 14px,
+        $justifyContent: center,
+        $alignItems: center,
+        $direction: column
+      );
+      padding: 1rem;
+      min-width: 366px;
+      // width: 366px;
+      height: 205px;
+      text-align: center;
+      font-size: 14px;
+      background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='8' ry='8' stroke='%23D0D5DDFF' stroke-width='4' stroke-dasharray='6%2c 14' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e");
+      border-radius: 8px;
+      color: #d0d5dd;
+      .disappear {
+        display: none;
+      }
+    }
+  }
+
+  .product_video {
+    margin-bottom: 8px;
+    span {
+      font-size: 12px;
+      padding: 0 8px;
+      border-radius: 20px;
+      background-color: #ecfdf3;
+      color: #027a48;
+    }
+  }
+
+  .video_format {
+    font-size: 12px;
+    margin-bottom: 16px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .form_group {
+    @include flex($direction: row, $justifyContent: space-between);
+  }
+
+  .media {
+    .media_icon {
+      @include flex($justifyContent: space-between);
+      overflow-x: auto;
+
+      label {
+        @include flex(
+          $gap: 14px,
+          $justifyContent: center,
+          $alignItems: center,
+          $direction: column
+        );
+      }
+    }
+  }
+}
